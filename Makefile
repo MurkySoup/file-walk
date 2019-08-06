@@ -2,14 +2,13 @@
 
 CC							= gcc
 CC_OPT					= -Wall -Wextra -O2 -fPIC -ftrapv -static
-#CC_OPT					= -Wall -Wextra -O2 -fPIC -ftrapv
 
-all:						filewalk
+all:						file-walk
 
-filewalk:				filewalk.c
-								$(CC) $(CC_OPT) -o filewalk filewalk.c
+filewalk:				file-walk.c
+								$(CC) $(CC_OPT) -o file-walk file-walk.c
 
 clean:
-								rm filewalk
+								rm file-walk
 
 # end of Makefile
