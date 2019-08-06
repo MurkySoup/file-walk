@@ -19,6 +19,8 @@ $ ./file-walk /path/to/directory
 
 During internal testing, this program delivered a list from a hierarchy containing 41K+ directories and 135K+ files in under three seconds.
 
+**Be aware: This program will recursively walk an entire hierarchy from the starting point you give. Three is no option built into this program to limit this functionality. It will cross mount-points and may have a significant memory footprint if used against really large hierarchies.**
+
 I would suggest 'wrapping' this script in a proper control structure. In the following example, if 'file-walk' indicated that a given entry is a file (field one is an "f"), then display the remainder of the line (to correct for spaces, etc., in a given filename), and use 'xargs' to 'stat' files in the resulting list.
 
 ```
