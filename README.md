@@ -1,18 +1,17 @@
 # file-walk
 List contents of a filesystem hierchy with costly stat() overhead!
 
-The original use-case what to scan an EXT3 filesystem hierarchy that had been overrun with millions of file, slowing normal use to a crawl. This program generated the file list necessary to target and delete the offending files (which were most offensive, indeed)!
+The original use-case was to scan an EXT3 filesystem hierarchy that had been overrun with millions of files, slowing normal use to a crawl. This program generated the file list necessary to target and delete the offending files (which were most offensive, indeed)!
 
 ## Build instructions:
+You'll need GCC. There are numerous tutorials online to assist you with this step, if you're new to the GCC toolchain. Use the included 'make' file. This program should compile easily using GCC 3.x+, but might require installation of GLIBC static libraries, if they're not already present.
 
-You'll need GCC. There are numerous tutorials online to assist you with this step, if you're new to the GCC toolchain. Use the included 'make' file. Should compile easily using GCC 4+, but might require installation of GLIBC static libraries, if they're not already present. Example given:
-
+Example given:
 ```
 $ make
 ```
 
 ## Example use:
-
 ```
 $ ./file-walk /path/to/directory
 ```
@@ -30,19 +29,15 @@ I would suggest 'wrapping' this script in a proper control structure. In the fol
 You can use a bit of imagimation and alter this control structure for a wide array of uses. "Wow" your friends. Impress your boss. Walk like a rock star.
 
 ## Built With
-
 * [Gnu Compiler Collection (GCC)](https://gcc.gnu.org)
 
 ## Contributing
-
 Please contact the Security Enginnering Team for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
-
 * **Rick Pelletier** - [Gannett Co., Inc. (USA Today Network)](https://www.usatoday.com/)
 
 ## License
-
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 You may obtain a copy of the License at: http://www.apache.org/licenses/LICENSE-2.0
 
