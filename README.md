@@ -19,13 +19,13 @@ $ ./file-walk /path/to/directory
 
 During internal testing, this program delivered a list from a hierarchy containing 41K+ directories and 135K+ files in under three seconds.
 
-I would suggest 'wrapping' this script in a propre control structure. In the following example, if 'file-walk' indicated that a given entry is a file (field one is an "f"), then display the remainder of the line (to correct for spaces, etc., in a given filename), and use 'xargs' to 'stat' the target file.
+I would suggest 'wrapping' this script in a proper control structure. In the following example, if 'file-walk' indicated that a given entry is a file (field one is an "f"), then display the remainder of the line (to correct for spaces, etc., in a given filename), and use 'xargs' to 'stat' files in the resulting list.
 
 ```
 ./filewalk | awk '$1 == "f" {for (i=2; i<=NF; i++) print $i}' | xargs stat -t
 ```
 
-You can use a bit of imagimation and alter this control structure for a wide array of uses.
+You can use a bit of imagimation and alter this control structure for a wide array of uses. "Wow" your friends. Impress your boss. Walk like a rock star.
 
 ## Built With
 
