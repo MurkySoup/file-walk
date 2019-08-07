@@ -11,7 +11,7 @@ Example given:
 $ make
 ```
 
-You may then copy the results executable to an accessible point inside your execution path.
+You may then copy the compiled executable to an accessible point inside your execution path.
 
 ## Example use:
 ```
