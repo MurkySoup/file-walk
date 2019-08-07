@@ -28,13 +28,19 @@ I would suggest 'wrapping' this script in a proper control structure. In the fol
 $ file-walk /path/to/hierarchy | awk '$1 == "f" {for (i=2; i<=NF; i++) print $i}' | xargs stat -t
 ```
 
-Or to delete a list of files that exceed globbing limites:
+Or to delete a list of files that exceed globbing limits:
 
 ```
 $ file-walk /path/to/hierarchy | awk '$1 == "f" {for (i=2; i<=NF; i++) print $i}' | xargs rm
 ```
 
-You can use a bit of imagimation and alter this control structure for a wide array of uses. "Wow" your friends. Impress your boss. Walk like a rock star.
+You can use a bit of imagimation and alter this control structure for a wide array of uses. "Wow" your friends. Impress your boss. Walk like a rock star. Obviously, you'll should exercise care in what you're targeting; if you're trying to find specific files, you'll need to add an additional layer of filtering to acheive that, like so (looking for Python source code files):
+
+```
+$ file-walk /path/to/hierarchy | awk '$1 == "f" {for (i=2; i<=NF; i++) print $i}' | ag --nocolor --nonumber '(?i)py$' | xargs stat -t
+```
+
+As expected, you can use 'grep' instead of 'ag' (or 'rg'), with a trivial change in syntax.
 
 ## Built With
 * [Gnu Compiler Collection (GCC)](https://gcc.gnu.org)
