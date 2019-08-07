@@ -11,9 +11,11 @@ Example given:
 $ make
 ```
 
+You may then copy the results executable to an accessible point inside your execution path.
+
 ## Example use:
 ```
-$ ./file-walk /path/to/directory
+$ file-walk /path/to/hierarchy
 ```
 
 During internal testing, this program delivered a list from a hierarchy containing 41K+ directories and 135K+ files in under three seconds.
@@ -23,7 +25,13 @@ During internal testing, this program delivered a list from a hierarchy containi
 I would suggest 'wrapping' this script in a proper control structure. In the following example, if 'file-walk' indicated that a given entry is a file (field one is an "f"), then display the remainder of the line (to correct for spaces, etc., in a given filename), and use 'xargs' to 'stat' files in the resulting list.
 
 ```
-./file-walk | awk '$1 == "f" {for (i=2; i<=NF; i++) print $i}' | xargs stat -t
+$ file-walk /path/to/hierarchy | awk '$1 == "f" {for (i=2; i<=NF; i++) print $i}' | xargs stat -t
+```
+
+Or to delete a list of files that exceed globbing limites:
+
+```
+$ file-walk /path/to/hierarchy | awk '$1 == "f" {for (i=2; i<=NF; i++) print $i}' | xargs rm
 ```
 
 You can use a bit of imagimation and alter this control structure for a wide array of uses. "Wow" your friends. Impress your boss. Walk like a rock star.
