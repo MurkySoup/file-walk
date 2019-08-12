@@ -1,5 +1,5 @@
 # file-walk
-List contents of a filesystem hierchy with costly stat() overhead!
+List contents of a filesystem hierchy without the costly stat() overhead!
 
 The original use-case was to scan an EXT3 filesystem hierarchy that had been overrun with millions of files, slowing normal use to a crawl. This program generated the file list necessary to target and delete the offending files (which were most offensive, indeed)!
 
