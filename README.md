@@ -45,12 +45,6 @@ As expected, you can use 'grep' instead of 'ag' (or 'rg'), with a trivial change
 ## Built With
 * [Gnu Compiler Collection (GCC)](https://gcc.gnu.org)
 
-## Contributing
-Please contact the Security Enginnering Team for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Authors
-* **Rick Pelletier** - [Gannett Co., Inc. (USA Today Network)](https://www.usatoday.com/)
-
 ## License
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 You may obtain a copy of the License at: http://www.apache.org/licenses/LICENSE-2.0
