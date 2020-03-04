@@ -34,7 +34,7 @@ Or to delete a list of files that exceed globbing limits:
 $ file-walk /path/to/hierarchy | awk '$1 == "f" {for (i=2; i<=NF; i++) print $i}' | xargs rm
 ```
 
-You can use a bit of imagimation and alter this control structure for a wide array of uses. "Wow" your friends. Impress your boss. Walk like a rock star. Obviously, you'll should exercise care in what you're targeting; if you're trying to find specific files, you'll need to add an additional layer of filtering to acheive that, like so (looking for Python source code files):
+You can use a bit of imagimation and alter this control structure for a wide array of uses. "Wow" your friends. Impress your boss. Walk like a rock star. Obviously, you'll exercise caution in what you're targeting; if you're trying to find specific files, you'll need to add an additional layer of filtering to acheive that, like so (looking for Python source code files):
 
 ```
 $ file-walk /path/to/hierarchy | awk '$1 == "f" {for (i=2; i<=NF; i++) print $i}' | ag --nocolor --nonumber '(?i)py$' | xargs stat -t
